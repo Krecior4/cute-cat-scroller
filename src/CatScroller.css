@@ -1,0 +1,23 @@
+#content-wrapper {
+    min-width: 220px;
+    max-width: 340px;
+    max-height: 500px;
+    background-color: #303030;
+    padding: 1rem;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 440px;
+    max-height: 420px;
+    border-radius: 25px;
+    margin-bottom: 1rem;
+}
+
+#controllers {
+    margin-top: auto;
+    display: flex;
+    gap: 5px;
+}
