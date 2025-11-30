@@ -4,19 +4,22 @@ import './CatScroller.css'
 export default function CatScroller() {
     const [url, setUrl] = useState<string>()
     const [clicked, setClicked] = useState<boolean>()
-    let meh = useRef(new Audio("../assets/meh.wav"))
-    let cute = useRef(new Audio("../assets/cute.wav"))
+    const meh = useRef(new Audio("../assets/meh.wav"))
+    const cute = useRef(new Audio("../assets/cute.wav"))
 
     const reloadCat = async () => {
         const response = await fetch("https://cataas.com/cat")
         const result = await response.blob()
         const internalUrl = URL.createObjectURL(result)
-        setUrl(internalUrl)
+        await setUrl(internalUrl)
         await setClicked(false)
     }
 
     useEffect(() => {
-        reloadCat()
+        const load = async () => {
+            reloadCat()
+        }
+        load()
     }, [])
 
     return (
